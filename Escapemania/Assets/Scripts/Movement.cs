@@ -24,25 +24,5 @@ public class Movement : MonoBehaviour
     float z = Input.GetAxis("Vertical");
     Vector3 move = transform.right * x + transform.forward * z;
     controller.Move(move * movementSpeed * Time.deltaTime);
-    if (Input.GetButtonDown("Crouch"))
-    {
-      HandleCrouch();
-    }
-  }
-  void HandleCrouch()
-  {
-    if (!isCrouched)
-    {
-      transform.localPosition = new Vector3(transform.localPosition.x, originalPosition.y * 0.8f, transform.localPosition.z);
-      transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * 0.5f, transform.localScale.z);
-      controller.height = controller.height * 0.5f;
-      isCrouched = true;
-    }
-    else
-    {
-      isCrouched = false;
-      transform.localPosition = originalPosition;
-      transform.localScale = originalScale;
-    }
   }
 }
