@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-  public float sensitivity = 500f;
+  public float sensitivity = 200f;
   public Transform camera;
-  public float xRotation = 0f;
+  float xRotation = 0f;
 
   // Start is called before the first frame update
   void Start()
