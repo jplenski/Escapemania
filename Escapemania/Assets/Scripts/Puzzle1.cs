@@ -6,22 +6,24 @@ public class Puzzle1 : MonoBehaviour
 {
   public List<IsTouching> trays;
   public GameObject key;
-  public bool allCorrect;
-  public int sum;
+  public bool completed;
   // Start is called before the first frame update
   void Start()
   {
+    completed = false;
     key.SetActive(false);
-    allCorrect = false;
-    sum = 0;
   }
 
   // Update is called once per frame
   void Update()
   {
-    if (trays[0].touching && trays[1].touching && trays[2].touching && trays[3].touching)
+    if (!completed)
     {
-      key.SetActive(true);
+      if (trays[0].touching && trays[1].touching && trays[2].touching && trays[3].touching)
+      {
+        completed = true;
+        key.SetActive(true);
+      }
     }
   }
 }
