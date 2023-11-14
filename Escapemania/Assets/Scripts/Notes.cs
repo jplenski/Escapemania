@@ -24,7 +24,12 @@ public class Notes : MonoBehaviour
         reading = true;
         note.display.SetActive(true);
       }
-      if (!note.inRange)
+      else if (!note.inRange)
+      {
+        reading = false;
+        note.display.SetActive(false);
+      }
+      else if (note.inRange && reading && Input.GetButtonDown("read"))
       {
         reading = false;
         note.display.SetActive(false);
