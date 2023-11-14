@@ -140,4 +140,12 @@ public class Keypad : MonoBehaviour
       codeText.text = "";
     }
   }
+
+  public void Backspace()
+  {
+    if (codeText.text.Length > 0)
+    {
+      codeText.text = codeText.text.Remove(codeText.text.Length - 1);
+    }
+  }
 }
