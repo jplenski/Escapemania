@@ -124,7 +124,15 @@ public class Keypad : MonoBehaviour
     }
   }
 
-  public void EnterCode()
+  public void TypeCodeZero()
+  {
+    if (codeText.text.Length < 4)
+    {
+      codeText.text = codeText.text + "0";
+    }
+  }
+
+    public void EnterCode()
   {
     if (codeText.text == "2938")
     {
