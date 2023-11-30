@@ -20,7 +20,7 @@ public class Doors : MonoBehaviour
   {
     if (doors[0].touching)
     {
-      door1.SetActive(false);
+      //door1.SetActive(false);
       key1.SetActive(false);
       winScreen.SetActive(true);
       Time.timeScale = 0f;
