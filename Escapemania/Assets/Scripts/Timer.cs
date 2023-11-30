@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
   {
     Time.timeScale = 1f;
     timerText.text = "";
-    timeRemaining = 30;
+    timeRemaining = 300;
     loseScreen.SetActive(false);
     timerOn = true;
   }

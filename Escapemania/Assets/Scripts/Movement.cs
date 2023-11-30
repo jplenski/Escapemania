@@ -9,9 +9,12 @@ public class Movement : MonoBehaviour
   Vector3 originalPosition;
   Vector3 originalScale;
   public bool isCrouched;
+  public float gravity;
+  Vector3 vel;
   // Start is called before the first frame update
   void Start()
   {
+    gravity = -9.18f;
     originalScale = transform.localScale;
     originalPosition = transform.localPosition;
     isCrouched = false;
@@ -24,5 +27,10 @@ public class Movement : MonoBehaviour
     float z = Input.GetAxis("Vertical");
     Vector3 move = transform.right * x + transform.forward * z;
     controller.Move(move * movementSpeed * Time.deltaTime);
+    if (vel.y > -9.18)
+    {
+      vel.y += gravity * Time.deltaTime;
+    }
+    controller.Move(vel * Time.deltaTime);
   }
 }
