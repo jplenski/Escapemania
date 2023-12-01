@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-  public float sensitivity = 200f;
+  public float sensitivity = 0.5f;
   public Transform camera;
   float xRotation = 0f;
 
@@ -12,6 +12,7 @@ public class CameraMovement : MonoBehaviour
   void Start()
   {
     Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = true;
   }
 
   // Update is called once per frame
