@@ -9,6 +9,8 @@ public class Doors : MonoBehaviour
   public GameObject key1;
   public GameObject door2;
   public GameObject key2;
+  public GameObject barricade;
+  public GameObject crowbar;
   public GameObject winScreen;
   // Start is called before the first frame update
   void Start()
@@ -16,6 +18,7 @@ public class Doors : MonoBehaviour
     door1.SetActive(true);
     winScreen.SetActive(false);
     door2.SetActive(true);
+    barricade.SetActive(true);
   }
 
   // Update is called once per frame
@@ -33,6 +36,11 @@ public class Doors : MonoBehaviour
       Time.timeScale = 0f;
       Cursor.lockState = CursorLockMode.None;
       winScreen.SetActive(true);
+    }
+    if (doors[2].touching)
+    {
+      barricade.SetActive(false);
+      crowbar.SetActive(false);
     }
   }
 }
