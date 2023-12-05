@@ -10,15 +10,18 @@ public class Timer : MonoBehaviour
   public bool timerOn;
   public TextMeshProUGUI timerText;
   [SerializeField] GameObject loseScreen;
+  public AudioSource loseSound;
+  public bool lost;
 
   // Start is called before the first frame update
   void Start()
   {
     Time.timeScale = 1f;
     timerText.text = "";
-    timeRemaining = 300;
+    timeRemaining = 10;
     loseScreen.SetActive(false);
     timerOn = true;
+    lost = false;
   }
 
   // Update is called once per frame
@@ -26,16 +29,18 @@ public class Timer : MonoBehaviour
   {
     if (timerOn)
     {
-      if (timeRemaining > 0)
+      if (timeRemaining <= 0 && !lost)
       {
-        timeRemaining = timeRemaining - Time.deltaTime;
-        changeTime(timeRemaining);
-      }
-      else
-      {
+        loseSound.Play();
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         loseScreen.SetActive(true);
+        lost = true;
+      }
+      else
+      {
+        timeRemaining = timeRemaining - Time.deltaTime;
+        changeTime(timeRemaining);
       }
     }
   }

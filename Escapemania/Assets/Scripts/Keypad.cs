@@ -12,6 +12,8 @@ public class Keypad : MonoBehaviour
   public TextMeshProUGUI codeText;
   public List<GameObject> buttons;
   public GameObject lid2;
+  public AudioSource correctSound;
+  public AudioSource wrongSound;
   // Start is called before the first frame update
   void Start()
   {
@@ -136,6 +138,7 @@ public class Keypad : MonoBehaviour
   {
     if (codeText.text == "2938")
     {
+      correctSound.Play();
       lid2.SetActive(false);
       keypadScreen.SetActive(false);
       interacting = false;
@@ -145,6 +148,7 @@ public class Keypad : MonoBehaviour
     }
     else
     {
+      wrongSound.Play();
       codeText.text = "";
     }
   }
