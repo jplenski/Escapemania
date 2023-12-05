@@ -11,14 +11,14 @@ public class Keypad : MonoBehaviour
   public CameraMovement camera;
   public TextMeshProUGUI codeText;
   public List<GameObject> buttons;
-  public GameObject key2;
+  public GameObject lid2;
   // Start is called before the first frame update
   void Start()
   {
     interacting = false;
     keypadScreen.SetActive(false);
     codeText.text = "";
-    key2.SetActive(false);
+    lid2.SetActive(true);
   }
 
   // Update is called once per frame
@@ -136,7 +136,7 @@ public class Keypad : MonoBehaviour
   {
     if (codeText.text == "2938")
     {
-      key2.SetActive(true);
+      lid2.SetActive(false);
       keypadScreen.SetActive(false);
       interacting = false;
       camera.enabled = true;
