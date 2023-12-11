@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
       vel.y += gravity * Time.deltaTime;
     }
     controller.Move(vel * Time.deltaTime);
+    // Add check for animation
     /*if(move == Vector3.zero)
         {
             animator.SetFloat("Speed", 0);

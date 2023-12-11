@@ -18,6 +18,7 @@ public class Puzzle1 : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // Add Thumbs up animation here?
     if (!completed)
     {
       if (trays[0].touching && trays[1].touching && trays[2].touching && trays[3].touching)
