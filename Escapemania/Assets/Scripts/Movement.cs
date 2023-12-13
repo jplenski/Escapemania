@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     originalScale = transform.localScale;
     originalPosition = transform.localPosition;
     isCrouched = false;
-    animator = GetComponent<Animator>();
+    animator = GetComponentInChildren<Animator>();
   }
 
   // Update is called once per frame
@@ -36,13 +36,13 @@ public class Movement : MonoBehaviour
     controller.Move(vel * Time.deltaTime);
     // Add check for animation
     
-    /*if(move == Vector3.zero)
+    if(move == Vector3.zero)
         {
             animator.SetFloat("Speed", 0);
         }
         else
         {
             animator.SetFloat("Speed", 0.4f);
-        }*/
+        }
   }
 }
