@@ -15,9 +15,7 @@ public class Drag : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-        // Animation check?
-        // Check while player is holding object
-        // Check when player releases object
+
   }
     
   void OnMouseDown()
@@ -35,6 +33,6 @@ public class Drag : MonoBehaviour
 
   void OnMouseDrag()
   {
-    transform.position = GetMouseWorldPos() + offset;
+    transform.position = GetMouseWorldPos() + offset;  
   }
 }
