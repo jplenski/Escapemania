@@ -16,6 +16,7 @@ public class Doors : MonoBehaviour
   public GameObject winScreen;
   public AudioSource unlockSound;
   public AudioSource winSound;
+  public AudioSource music;
   // Start is called before the first frame update
   void Start()
   {
@@ -43,6 +44,7 @@ public class Doors : MonoBehaviour
       door2.SetActive(false);
       key2.SetActive(false);
       winSound.Play();
+      music.Stop();
       Time.timeScale = 0f;
       Cursor.lockState = CursorLockMode.None;
       winScreen.SetActive(true);

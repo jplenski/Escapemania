@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
   [SerializeField] GameObject loseScreen;
   public AudioSource loseSound;
   public bool lost;
+  public AudioSource music;
 
   // Start is called before the first frame update
   void Start()
@@ -33,6 +34,7 @@ public class Timer : MonoBehaviour
       {
         loseSound.Play();
         Cursor.lockState = CursorLockMode.None;
+        music.Stop();
         Time.timeScale = 0f;
         loseScreen.SetActive(true);
         lost = true;
