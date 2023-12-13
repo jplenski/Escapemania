@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
   public GameObject pauseScreen;
-
+  public AudioSource select;
   void Start()
   {
     pauseScreen.SetActive(false);
@@ -34,6 +34,7 @@ public class Pause : MonoBehaviour
 
   public void Resume()
   {
+    select.Play();
     Time.timeScale = 1f;
     Cursor.lockState = CursorLockMode.Locked;
     pauseScreen.SetActive(false);
@@ -41,6 +42,7 @@ public class Pause : MonoBehaviour
 
   public void Menu()
   {
+    select.Play();
     Time.timeScale = 1f;
     SceneManager.LoadSceneAsync(0);
   }
