@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
   public bool isCrouched;
   public float gravity;
   Vector3 vel;
-  Animator animator;
+  public Animator animator;
   // Start is called before the first frame update
   void Start()
   {
@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     originalScale = transform.localScale;
     originalPosition = transform.localPosition;
     isCrouched = false;
-    //animator = GetComponent<Animator>();
+    animator = GetComponent<Animator>();
   }
 
   // Update is called once per frame
@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
     }
     controller.Move(vel * Time.deltaTime);
     // Add check for animation
+    
     /*if(move == Vector3.zero)
         {
             animator.SetFloat("Speed", 0);
